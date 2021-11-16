@@ -46,6 +46,7 @@ void loop() {
   pixels.clear(); // Set all pixel colors to 'off'
   float c = tempsensor.readTempC();
   float f = tempsensor.readTempF();
+  int x = (f - 77) * 0.636;
   Serial.print("Temp: ");
 
   Serial.print(f, 4); Serial.println("*F.");
@@ -53,16 +54,52 @@ void loop() {
   delay(200);
 
 
-//first pixel
-  if (f > 80) { 
+  //------------------------------------------
+  if (x > 1) {
     pixels.setPixelColor(0, pixels.Color(0, 150, 0));
-    pixels.show();   
-    delay(DELAYVAL); 
+    pixels.show();
+    delay(DELAYVAL);
   } else {
     pixels.setPixelColor(0, pixels.Color(0, 0, 0));
     pixels.show();
   }
-//first pixel
+  //------------------------------------------
+    if (x > 2) {
+    pixels.setPixelColor(1, pixels.Color(0, 150, 0));
+    pixels.show();
+    delay(DELAYVAL);
+  } else {
+    pixels.setPixelColor(1, pixels.Color(0, 0, 0));
+    pixels.show();
+  }
+  //------------------------------------------
+    if (x > 3) {
+    pixels.setPixelColor(2, pixels.Color(0, 150, 0));
+    pixels.show();
+    delay(DELAYVAL);
+  } else {
+    pixels.setPixelColor(2, pixels.Color(0, 0, 0));
+    pixels.show();
+  }
+  //------------------------------------------
+    if (x > 4) {
+    pixels.setPixelColor(3, pixels.Color(0, 150, 0));
+    pixels.show();
+    delay(DELAYVAL);
+  } else {
+    pixels.setPixelColor(3, pixels.Color(0, 0, 0));
+    pixels.show();
+  }
+  //------------------------------------------
+    if (x > 5) {
+    pixels.setPixelColor(4, pixels.Color(0, 150, 0));
+    pixels.show();
+    delay(DELAYVAL);
+  } else {
+    pixels.setPixelColor(4, pixels.Color(0, 0, 0));
+    pixels.show();
+  }
+  //------------------------------------------
 
 
 
@@ -74,4 +111,3 @@ void loop() {
 
 
 }
- 
