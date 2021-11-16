@@ -50,53 +50,80 @@ void loop() {
   Serial.print("Temp: ");
 
   Serial.print(f, 4); Serial.println("*F.");
-
+  Serial.print(x);
   delay(200);
 
 
   //------------------------------------------
-  if (x > 1) {
-    pixels.setPixelColor(0, pixels.Color(0, 150, 0));
+  if (x >= 1) {
+    pixels.setPixelColor(0, pixels.Color(102,255,51));
     pixels.show();
-    delay(DELAYVAL);
+
   } else {
     pixels.setPixelColor(0, pixels.Color(0, 0, 0));
     pixels.show();
   }
   //------------------------------------------
-    if (x > 2) {
-    pixels.setPixelColor(1, pixels.Color(0, 150, 0));
+  if (x >= 2) {
+    pixels.setPixelColor(1, pixels.Color(204,255,51));
     pixels.show();
-    delay(DELAYVAL);
+
   } else {
     pixels.setPixelColor(1, pixels.Color(0, 0, 0));
     pixels.show();
   }
   //------------------------------------------
-    if (x > 3) {
-    pixels.setPixelColor(2, pixels.Color(0, 150, 0));
+  if (x >= 3) {
+    pixels.setPixelColor(2, pixels.Color(255, 255, 0));
     pixels.show();
-    delay(DELAYVAL);
+
   } else {
     pixels.setPixelColor(2, pixels.Color(0, 0, 0));
     pixels.show();
   }
   //------------------------------------------
-    if (x > 4) {
-    pixels.setPixelColor(3, pixels.Color(0, 150, 0));
+  if (x >= 4) {
+    pixels.setPixelColor(3, pixels.Color(255, 204, 0));
     pixels.show();
-    delay(DELAYVAL);
+
   } else {
     pixels.setPixelColor(3, pixels.Color(0, 0, 0));
     pixels.show();
   }
   //------------------------------------------
-    if (x > 5) {
-    pixels.setPixelColor(4, pixels.Color(0, 150, 0));
+  if (x >= 5) {
+    pixels.setPixelColor(4, pixels.Color(255, 153, 51));
     pixels.show();
-    delay(DELAYVAL);
+
   } else {
     pixels.setPixelColor(4, pixels.Color(0, 0, 0));
+    pixels.show();
+  }
+  //------------------------------------------
+  if (x >= 6) {
+    pixels.setPixelColor(5, pixels.Color(111, 0, 0));
+    pixels.show();
+
+  } else {
+    pixels.setPixelColor(5, pixels.Color(0, 0, 0));
+    pixels.show();
+  }
+  //------------------------------------------
+  if (x >= 7) {
+    pixels.setPixelColor(6, pixels.Color(111, 0, 0));
+    pixels.show();
+
+  } else {
+    pixels.setPixelColor(6, pixels.Color(0, 0, 0));
+    pixels.show();
+  }
+  //------------------------------------------
+  if (x >= 8) {
+    pixels.setPixelColor(7, pixels.Color(111, 0, 0));
+    pixels.show();
+
+  } else {
+    pixels.setPixelColor(7, pixels.Color(0, 0, 0));
     pixels.show();
   }
   //------------------------------------------
