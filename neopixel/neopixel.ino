@@ -52,20 +52,26 @@ void loop() {
 
   delay(200);
 
-  // The first NeoPixel in a strand is #0, second is 1, all the way up
-  // to the count of pixels minus one.
-  if (f > 82) { // For each pixel...
 
-    // pixels.Color() takes RGB values, from 0,0,0 up to 255,255,255
-    // Here we're using a moderately bright green color:
+//first pixel
+  if (f > 80) { 
     pixels.setPixelColor(0, pixels.Color(0, 150, 0));
-
-    pixels.show();   // Send the updated pixel colors to the hardware.
-
-    delay(DELAYVAL); // Pause before next pass through loop
+    pixels.show();   
+    delay(DELAYVAL); 
   } else {
     pixels.setPixelColor(0, pixels.Color(0, 0, 0));
     pixels.show();
   }
+//first pixel
+
+
+
+
+
+
+
+
+
+
 }
  
