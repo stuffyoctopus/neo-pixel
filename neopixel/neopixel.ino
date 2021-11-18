@@ -34,7 +34,7 @@ void setup() {
   tempsensor.setResolution(3);
   // These lines are specifically to support the Adafruit Trinket 5V 16 MHz.
   // Any other board, you can remove this part (but no harm leaving it):
-#if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
+#if defined(__AVR_ATtiny85__) && (F_CPU  >= 16000000)
   clock_prescale_set(clock_div_1);
 #endif
   // END of Trinket-specific code.
@@ -46,85 +46,85 @@ void loop() {
   pixels.clear(); // Set all pixel colors to 'off'
   float c = tempsensor.readTempC();
   float f = tempsensor.readTempF();
-  int x = (f - 77) * 0.636;
+  float x = (f - 77) * 0.636;
   Serial.print("Temp: ");
 
   Serial.print(f, 4); Serial.println("*F.");
-  Serial.print(x);
-  delay(200);
+  Serial.println(x);
+//  delay(20);
 
 
-  //------------------------------------------
-  if (x >= 1) {
-    pixels.setPixelColor(0, pixels.Color(102,255,51));
+  //------------------------------------------1
+  if (x  >= 1) {
+    pixels.setPixelColor(0, pixels.Color(0,255,0));
     pixels.show();
 
   } else {
-    pixels.setPixelColor(0, pixels.Color(0, 0, 0));
-    pixels.show();
+ //  pixels.setPixelColor(0, pixels.Color(0, 0, 0));
+   // pixels.show();
   }
-  //------------------------------------------
-  if (x >= 2) {
-    pixels.setPixelColor(1, pixels.Color(204,255,51));
+  //------------------------------------------2
+  if (x  >= 2) {
+    pixels.setPixelColor(1, pixels.Color(0,255,0));
     pixels.show();
 
   } else {
-    pixels.setPixelColor(1, pixels.Color(0, 0, 0));
-    pixels.show();
+    //pixels.setPixelColor(1, pixels.Color(0, 0, 0));
+  //  pixels.show();
   }
-  //------------------------------------------
-  if (x >= 3) {
+  //------------------------------------------3
+  if (x  >= 3) {
     pixels.setPixelColor(2, pixels.Color(255, 255, 0));
     pixels.show();
 
   } else {
-    pixels.setPixelColor(2, pixels.Color(0, 0, 0));
-    pixels.show();
+   // pixels.setPixelColor(2, pixels.Color(0, 0, 0));
+  //  pixels.show();
   }
-  //------------------------------------------
-  if (x >= 4) {
-    pixels.setPixelColor(3, pixels.Color(255, 204, 0));
+  //------------------------------------------4
+  if (x  >= 4) {
+    pixels.setPixelColor(3, pixels.Color(255, 255, 0));
     pixels.show();
 
   } else {
-    pixels.setPixelColor(3, pixels.Color(0, 0, 0));
-    pixels.show();
+  //  pixels.setPixelColor(3, pixels.Color(0, 0, 0));
+ //   pixels.show();
   }
-  //------------------------------------------
-  if (x >= 5) {
+  //------------------------------------------5
+  if (x  >= 5) {
     pixels.setPixelColor(4, pixels.Color(255, 153, 51));
     pixels.show();
 
   } else {
-    pixels.setPixelColor(4, pixels.Color(0, 0, 0));
-    pixels.show();
+  //  pixels.setPixelColor(4, pixels.Color(0, 0, 0));
+ //   pixels.show();
   }
-  //------------------------------------------
-  if (x >= 6) {
-    pixels.setPixelColor(5, pixels.Color(111, 0, 0));
+  //------------------------------------------6
+  if (x  >= 6) {
+    pixels.setPixelColor(5, pixels.Color(255, 153, 51));
     pixels.show();
 
   } else {
-    pixels.setPixelColor(5, pixels.Color(0, 0, 0));
-    pixels.show();
+  //  pixels.setPixelColor(5, pixels.Color(0, 0, 0));
+   // pixels.show();
   }
-  //------------------------------------------
-  if (x >= 7) {
-    pixels.setPixelColor(6, pixels.Color(111, 0, 0));
+  //------------------------------------------7
+  if (x  >= 7) {
+    pixels.setPixelColor(6, pixels.Color(255, 0, 0));
     pixels.show();
 
   } else {
-    pixels.setPixelColor(6, pixels.Color(0, 0, 0));
-    pixels.show();
+  //  pixels.setPixelColor(6, pixels.Color(0, 0, 0));
+   // pixels.show();
   }
-  //------------------------------------------
-  if (x >= 8) {
-    pixels.setPixelColor(7, pixels.Color(111, 0, 0));
+  //------------------------------------------8
+  if (x  >= 8) {
+    pixels.setPixelColor(7, pixels.Color(255, 0, 0));
     pixels.show();
 
   } else {
-    pixels.setPixelColor(7, pixels.Color(0, 0, 0));
-    pixels.show();
+  //  pixels.setPixelColor(7, pixels.Color(0, 0, 0));
+  //  pixels.show();
   }
   //------------------------------------------
 
