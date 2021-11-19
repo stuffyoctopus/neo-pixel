@@ -22,7 +22,7 @@ Adafruit_MCP9808 tempsensor = Adafruit_MCP9808();
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 #define DELAYVAL 50 // Time (in milliseconds) to pause between pixels
-int x = 0;
+int x = 0;  
 void setup() {
   Serial.begin(9600);
   while (!Serial);
