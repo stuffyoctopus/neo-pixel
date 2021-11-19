@@ -43,11 +43,11 @@ void setup() {
 }
 
 void loop() {
-  delay(200);
+  delay(500);
 //  pixels.clear(); // Set all pixel colors to 'off'
   float c = tempsensor.readTempC();
   float f = tempsensor.readTempF();
-  int temperature = (f - 77) * 0.636;
+  int temperature = (f - 79) * 0.636;
   Serial.print("Temp: ");
 
   Serial.print(f, 4); Serial.println("*F.");
@@ -59,12 +59,12 @@ void loop() {
     int z = 0 + (20 * x);
     pixels.setPixelColor(x, pixels.Color(z, y, 0));
     pixels.show();
-    if (x > temperature) {
+   
+  }
+  if (x > temperature) {
       pixels.setPixelColor(x,pixels.Color(0,0,0));
       pixels.show();
     }
-  }
- 
 
 
 
