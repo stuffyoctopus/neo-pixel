@@ -52,8 +52,9 @@ void loop() {
 
   Serial.print(f, 4); Serial.println("*F.");
   Serial.println(x);
+  Serial.println(temperature);
   //  delay(20);
-  for (x = 0; x < 7; x++) {
+  for (x = 0; x < 8; x++) {
     //turn on x led.
     if (x <= temperature) {
       int y = 100 - (12.5 * x);
