@@ -47,7 +47,7 @@ void loop() {
   //  pixels.clear(); // Set all pixel colors to 'off'
   float c = tempsensor.readTempC();
   float f = tempsensor.readTempF();
-  int temperature = (f - 79) * 0.636;
+  int temperature = (f - 77) * 0.636;
   Serial.print("Temp: ");
 
   Serial.print(f, 4); Serial.println("*F.");
