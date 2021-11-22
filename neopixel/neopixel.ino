@@ -14,7 +14,7 @@ Adafruit_MCP9808 tempsensor = Adafruit_MCP9808();
 
 // How many NeoPixels are attached to the Arduino?
 #define NUMPIXELS 8 // Popular NeoPixel ring size
- 
+
 // When setting up the NeoPixel library, we tell it how many pixels,
 // and which pin to use to send signals. Note that for older NeoPixel
 // strips you might need to change the third parameter -- see the
@@ -22,12 +22,12 @@ Adafruit_MCP9808 tempsensor = Adafruit_MCP9808();
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 #define DELAYVAL 50 // Time (in milliseconds) to pause between pixels
-int x = 0;  
+int x = 0;
 void setup() {
   Serial.begin(9600);
   while (!Serial);
   if (!tempsensor.begin(0x18)) {
-    Serial.println("Couldn't find MCP9808! Check your connections and verify the address is correct."); 
+    Serial.println("Couldn't find MCP9808! Check your connections and verify the address is correct.");
     while (1);
   }
   Serial.println("Found MCP9808!");
@@ -43,8 +43,8 @@ void setup() {
 }
 
 void loop() {
-  delay(500);
-//  pixels.clear(); // Set all pixel colors to 'off'
+  //delay(500);
+  //  pixels.clear(); // Set all pixel colors to 'off'
   float c = tempsensor.readTempC();
   float f = tempsensor.readTempF();
   int temperature = (f - 79) * 0.636;
@@ -53,19 +53,28 @@ void loop() {
   Serial.print(f, 4); Serial.println("*F.");
   Serial.println(x);
   //  delay(20);
-  for (x = 0; x < temperature; x++) {
+  for (x = 0; x < 7; x++) {
     //turn on x led.
-    int y = 100 - (12.5 * x);
-    int z = 0 + (20 * x);
-    pixels.setPixelColor(x, pixels.Color(z, y, 0));
-    pixels.show();
-   
-  }
-  if (x > temperature) {
-      pixels.setPixelColor(x,pixels.Color(0,0,0));
-      pixels.show();
+    if (x <= temperature) {
+      int y = 100 - (12.5 * x);
+      int z = 0 + (20 * x);
+      pixels.setPixelColor(x, pixels.Color(z, y, 0));
+      //pixels.show();
+    } else {
+      pixels.setPixelColor(x, pixels.Color(0, 0, 0));
+      //pixels.show();
     }
+    pixels.show();
+  }
 
+
+
+  /*
+    if (x > temperature) {
+      pixels.setPixelColor(x,pixels.Color(0,0,0));
+     pixels.show();
+    }
+  */
 
 
 }
