@@ -58,8 +58,8 @@ void loop() {
     //turn on x led.
     if (x <= temperature) {
       int y = 80 - (10 * x);
-      int z = 0 + (25 * x);
-      pixels.setPixelColor(x, pixels.Color(z, y, 0));
+      int z = 0 + (31 * x);
+      pixels.setPixelColor(x, pixels.Color(z, y,  0));
       //pixels.show();
     } else {
       pixels.setPixelColor(x, pixels.Color(0, 0, 0));
@@ -67,15 +67,4 @@ void loop() {
     }
     pixels.show();
   }
-
-//delay(500);
-
-  /*
-    if (x > temperature) {
-      pixels.setPixelColor(x,pixels.Color(0,0,0));
-     pixels.show();
-    }
-  */
-
-
 }
