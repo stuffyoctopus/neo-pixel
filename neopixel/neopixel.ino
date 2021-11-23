@@ -43,7 +43,7 @@ void setup() {
 }
 
 void loop() {
-  //delay(500);
+  delay(500);
   //  pixels.clear(); // Set all pixel colors to 'off'
   float c = tempsensor.readTempC();
   float f = tempsensor.readTempF();
